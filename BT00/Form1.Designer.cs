@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label8 = new System.Windows.Forms.Label();
             this.btnKhong = new System.Windows.Forms.Button();
             this.btnGhi = new System.Windows.Forms.Button();
@@ -53,6 +55,20 @@
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtPhai = new System.Windows.Forms.TextBox();
+            this.bdnSinhvien = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnSinhvien)).BeginInit();
+            this.bdnSinhvien.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -62,7 +78,7 @@
             this.label8.ForeColor = System.Drawing.Color.Blue;
             this.label8.Location = new System.Drawing.Point(0, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(627, 55);
+            this.label8.Size = new System.Drawing.Size(586, 55);
             this.label8.TabIndex = 92;
             this.label8.Text = "DANH SÁCH SINH VIÊN";
             this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -71,31 +87,33 @@
             // 
             this.btnKhong.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnKhong.ForeColor = System.Drawing.Color.Maroon;
-            this.btnKhong.Location = new System.Drawing.Point(510, 344);
+            this.btnKhong.Location = new System.Drawing.Point(495, 236);
             this.btnKhong.Name = "btnKhong";
-            this.btnKhong.Size = new System.Drawing.Size(82, 35);
+            this.btnKhong.Size = new System.Drawing.Size(68, 35);
             this.btnKhong.TabIndex = 91;
             this.btnKhong.Text = "Không";
             this.btnKhong.UseVisualStyleBackColor = true;
+            this.btnKhong.Click += new System.EventHandler(this.btnKhong_Click);
             // 
             // btnGhi
             // 
             this.btnGhi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGhi.ForeColor = System.Drawing.Color.Maroon;
-            this.btnGhi.Location = new System.Drawing.Point(424, 344);
+            this.btnGhi.Location = new System.Drawing.Point(412, 237);
             this.btnGhi.Name = "btnGhi";
-            this.btnGhi.Size = new System.Drawing.Size(82, 35);
+            this.btnGhi.Size = new System.Drawing.Size(68, 35);
             this.btnGhi.TabIndex = 90;
             this.btnGhi.Text = "Ghi";
             this.btnGhi.UseVisualStyleBackColor = true;
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
             // 
             // btnHuy
             // 
             this.btnHuy.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnHuy.ForeColor = System.Drawing.Color.Maroon;
-            this.btnHuy.Location = new System.Drawing.Point(338, 344);
+            this.btnHuy.Location = new System.Drawing.Point(329, 237);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(82, 35);
+            this.btnHuy.Size = new System.Drawing.Size(68, 35);
             this.btnHuy.TabIndex = 89;
             this.btnHuy.Text = "Huỷ";
             this.btnHuy.UseVisualStyleBackColor = true;
@@ -104,73 +122,76 @@
             // 
             this.btnSau.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSau.ForeColor = System.Drawing.Color.Maroon;
-            this.btnSau.Location = new System.Drawing.Point(177, 345);
+            this.btnSau.Location = new System.Drawing.Point(174, 238);
             this.btnSau.Name = "btnSau";
-            this.btnSau.Size = new System.Drawing.Size(71, 33);
+            this.btnSau.Size = new System.Drawing.Size(57, 33);
             this.btnSau.TabIndex = 87;
             this.btnSau.Text = "Sau";
             this.btnSau.UseVisualStyleBackColor = true;
+            this.btnSau.Click += new System.EventHandler(this.btnSau_Click);
             // 
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThem.ForeColor = System.Drawing.Color.Maroon;
-            this.btnThem.Location = new System.Drawing.Point(252, 344);
+            this.btnThem.Location = new System.Drawing.Point(246, 237);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(82, 35);
+            this.btnThem.Size = new System.Drawing.Size(68, 35);
             this.btnThem.TabIndex = 88;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnTruoc
             // 
             this.btnTruoc.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnTruoc.ForeColor = System.Drawing.Color.Maroon;
-            this.btnTruoc.Location = new System.Drawing.Point(27, 345);
+            this.btnTruoc.Location = new System.Drawing.Point(27, 238);
             this.btnTruoc.Name = "btnTruoc";
-            this.btnTruoc.Size = new System.Drawing.Size(80, 33);
+            this.btnTruoc.Size = new System.Drawing.Size(66, 33);
             this.btnTruoc.TabIndex = 86;
             this.btnTruoc.Text = "Trước";
             this.btnTruoc.UseVisualStyleBackColor = true;
+            this.btnTruoc.Click += new System.EventHandler(this.btnTruoc_Click);
             // 
             // cboMaKH
             // 
             this.cboMaKH.FormattingEnabled = true;
-            this.cboMaKH.Location = new System.Drawing.Point(419, 230);
+            this.cboMaKH.Location = new System.Drawing.Point(392, 161);
             this.cboMaKH.Name = "cboMaKH";
-            this.cboMaKH.Size = new System.Drawing.Size(176, 32);
+            this.cboMaKH.Size = new System.Drawing.Size(176, 27);
             this.cboMaKH.TabIndex = 82;
             // 
             // dtpNgaySinh
             // 
             this.dtpNgaySinh.CustomFormat = "dd/MM/yyyy";
             this.dtpNgaySinh.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpNgaySinh.Location = new System.Drawing.Point(419, 176);
+            this.dtpNgaySinh.Location = new System.Drawing.Point(392, 130);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(176, 32);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(176, 27);
             this.dtpNgaySinh.TabIndex = 80;
             this.dtpNgaySinh.Value = new System.DateTime(2005, 11, 1, 0, 0, 0, 0);
             // 
             // txtTenSV
             // 
-            this.txtTenSV.Location = new System.Drawing.Point(451, 122);
+            this.txtTenSV.Location = new System.Drawing.Point(424, 99);
             this.txtTenSV.Name = "txtTenSV";
-            this.txtTenSV.Size = new System.Drawing.Size(144, 32);
+            this.txtTenSV.Size = new System.Drawing.Size(144, 27);
             this.txtTenSV.TabIndex = 79;
             // 
             // txtHoSV
             // 
-            this.txtHoSV.Location = new System.Drawing.Point(138, 122);
+            this.txtHoSV.Location = new System.Drawing.Point(111, 99);
             this.txtHoSV.Name = "txtHoSV";
-            this.txtHoSV.Size = new System.Drawing.Size(307, 32);
+            this.txtHoSV.Size = new System.Drawing.Size(307, 27);
             this.txtHoSV.TabIndex = 78;
             // 
             // lblSTT
             // 
             this.lblSTT.AutoSize = true;
-            this.lblSTT.Location = new System.Drawing.Point(111, 352);
+            this.lblSTT.Location = new System.Drawing.Point(108, 245);
             this.lblSTT.Name = "lblSTT";
-            this.lblSTT.Size = new System.Drawing.Size(62, 24);
+            this.lblSTT.Size = new System.Drawing.Size(51, 19);
             this.lblSTT.TabIndex = 76;
             this.lblSTT.Text = "00/00";
             // 
@@ -179,114 +200,230 @@
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(27, 72);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(65, 24);
+            this.label9.Size = new System.Drawing.Size(53, 19);
             this.label9.TabIndex = 74;
             this.label9.Text = "Mã SV";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(304, 180);
+            this.label3.Location = new System.Drawing.Point(277, 134);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(99, 24);
+            this.label3.Size = new System.Drawing.Size(81, 19);
             this.label3.TabIndex = 75;
             this.label3.Text = "Ngày Sinh";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 126);
+            this.label2.Location = new System.Drawing.Point(27, 103);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(99, 24);
+            this.label2.Size = new System.Drawing.Size(80, 19);
             this.label2.TabIndex = 73;
             this.label2.Text = "Họ tên SV";
             // 
             // txtTongDiem
             // 
-            this.txtTongDiem.Location = new System.Drawing.Point(419, 284);
+            this.txtTongDiem.Location = new System.Drawing.Point(392, 192);
             this.txtTongDiem.Name = "txtTongDiem";
-            this.txtTongDiem.Size = new System.Drawing.Size(176, 32);
+            this.txtTongDiem.Size = new System.Drawing.Size(176, 27);
             this.txtTongDiem.TabIndex = 85;
             // 
             // txtHocbong
             // 
-            this.txtHocbong.Location = new System.Drawing.Point(138, 284);
+            this.txtHocbong.Location = new System.Drawing.Point(111, 192);
             this.txtHocbong.Name = "txtHocbong";
-            this.txtHocbong.Size = new System.Drawing.Size(160, 32);
+            this.txtHocbong.Size = new System.Drawing.Size(160, 27);
             this.txtHocbong.TabIndex = 83;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(304, 288);
+            this.label7.Location = new System.Drawing.Point(277, 196);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(105, 24);
+            this.label7.Size = new System.Drawing.Size(86, 19);
             this.label7.TabIndex = 72;
             this.label7.Text = "Tổng điểm";
             // 
             // txtNoiSinh
             // 
-            this.txtNoiSinh.Location = new System.Drawing.Point(138, 230);
+            this.txtNoiSinh.Location = new System.Drawing.Point(111, 161);
             this.txtNoiSinh.Name = "txtNoiSinh";
-            this.txtNoiSinh.Size = new System.Drawing.Size(160, 32);
+            this.txtNoiSinh.Size = new System.Drawing.Size(160, 27);
             this.txtNoiSinh.TabIndex = 81;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(27, 288);
+            this.label6.Location = new System.Drawing.Point(27, 196);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(94, 24);
+            this.label6.Size = new System.Drawing.Size(77, 19);
             this.label6.TabIndex = 71;
             this.label6.Text = "Học bổng";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(304, 234);
+            this.label5.Location = new System.Drawing.Point(277, 165);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(55, 24);
+            this.label5.Size = new System.Drawing.Size(44, 19);
             this.label5.TabIndex = 70;
             this.label5.Text = "Khoa";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(27, 234);
+            this.label4.Location = new System.Drawing.Point(27, 165);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 24);
+            this.label4.Size = new System.Drawing.Size(69, 19);
             this.label4.TabIndex = 69;
             this.label4.Text = "Nơi Sinh";
             // 
             // txtMaSV
             // 
-            this.txtMaSV.Location = new System.Drawing.Point(138, 72);
+            this.txtMaSV.Location = new System.Drawing.Point(111, 68);
             this.txtMaSV.Name = "txtMaSV";
             this.txtMaSV.ReadOnly = true;
-            this.txtMaSV.Size = new System.Drawing.Size(457, 32);
+            this.txtMaSV.Size = new System.Drawing.Size(457, 27);
             this.txtMaSV.TabIndex = 77;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(27, 180);
+            this.label1.Location = new System.Drawing.Point(27, 134);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 24);
+            this.label1.Size = new System.Drawing.Size(39, 19);
             this.label1.TabIndex = 93;
             this.label1.Text = "Phái";
             // 
             // txtPhai
             // 
-            this.txtPhai.Location = new System.Drawing.Point(138, 176);
+            this.txtPhai.Location = new System.Drawing.Point(111, 130);
             this.txtPhai.Name = "txtPhai";
-            this.txtPhai.Size = new System.Drawing.Size(160, 32);
+            this.txtPhai.Size = new System.Drawing.Size(160, 27);
             this.txtPhai.TabIndex = 94;
+            // 
+            // bdnSinhvien
+            // 
+            this.bdnSinhvien.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bdnSinhvien.CountItem = this.bindingNavigatorCountItem;
+            this.bdnSinhvien.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bdnSinhvien.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bdnSinhvien.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bindingNavigatorMoveFirstItem,
+            this.bindingNavigatorMovePreviousItem,
+            this.bindingNavigatorSeparator,
+            this.bindingNavigatorPositionItem,
+            this.bindingNavigatorCountItem,
+            this.bindingNavigatorSeparator1,
+            this.bindingNavigatorMoveNextItem,
+            this.bindingNavigatorMoveLastItem,
+            this.bindingNavigatorSeparator2,
+            this.bindingNavigatorAddNewItem,
+            this.bindingNavigatorDeleteItem});
+            this.bdnSinhvien.Location = new System.Drawing.Point(0, 285);
+            this.bdnSinhvien.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bdnSinhvien.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bdnSinhvien.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bdnSinhvien.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bdnSinhvien.Name = "bdnSinhvien";
+            this.bdnSinhvien.PositionItem = this.bindingNavigatorPositionItem;
+            this.bdnSinhvien.Size = new System.Drawing.Size(586, 25);
+            this.bdnSinhvien.TabIndex = 95;
+            this.bdnSinhvien.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorMoveFirstItem
+            // 
+            this.bindingNavigatorMoveFirstItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveFirstItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveFirstItem.Image")));
+            this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
+            this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveFirstItem.Text = "Move first";
+            // 
+            // bindingNavigatorMovePreviousItem
+            // 
+            this.bindingNavigatorMovePreviousItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMovePreviousItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMovePreviousItem.Image")));
+            this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
+            this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMovePreviousItem.Text = "Move previous";
+            // 
+            // bindingNavigatorSeparator
+            // 
+            this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorPositionItem
+            // 
+            this.bindingNavigatorPositionItem.AccessibleName = "Position";
+            this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 23);
+            this.bindingNavigatorPositionItem.Text = "0";
+            this.bindingNavigatorPositionItem.ToolTipText = "Current position";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorSeparator1
+            // 
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorMoveNextItem
+            // 
+            this.bindingNavigatorMoveNextItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveNextItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveNextItem.Image")));
+            this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
+            this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveNextItem.Text = "Move next";
+            // 
+            // bindingNavigatorMoveLastItem
+            // 
+            this.bindingNavigatorMoveLastItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorMoveLastItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorMoveLastItem.Image")));
+            this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
+            this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorMoveLastItem.Text = "Move last";
+            // 
+            // bindingNavigatorSeparator2
+            // 
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(627, 420);
+            this.ClientSize = new System.Drawing.Size(586, 310);
+            this.Controls.Add(this.bdnSinhvien);
             this.Controls.Add(this.txtPhai);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label8);
@@ -313,10 +450,14 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtMaSV);
             this.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Binding Phai";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.bdnSinhvien)).EndInit();
+            this.bdnSinhvien.ResumeLayout(false);
+            this.bdnSinhvien.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -349,6 +490,18 @@
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtPhai;
+        private System.Windows.Forms.BindingNavigator bdnSinhvien;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
     }
 }
 
