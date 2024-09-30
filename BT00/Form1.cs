@@ -164,6 +164,31 @@ namespace BT00
             txtMaSV.ReadOnly = true;
         }
 
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            //Xac dinh dong can huy Su dung ham Find
+            DataRow rsv = (bs.Current as DataRowView).Row;
+            //Can kien tra Neu rsv ton tai trong tblKetQua thi khong xoa. Nguoc lai thi cho xoa
+            //Su dung ham getChilRow de kiem tra nhung dong lien quan co ton tai hay khong. Gia tri tra ve la mang
+            DataRow[] mangDongLienQuan = rsv.GetChildRows("FK_SINHVIEN_KETQUA");
+            if (mangDongLienQuan.Length > 0)//co ton tai nhung dong lien quan trong tblKetQua
+                MessageBox.Show("Khong xoa duoc Sv vi da co ket qua thi");
+            else
+            {
+                DialogResult tl;
+                tl = MessageBox.Show("Xoa sinh vien nay khong?", "Can than", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (tl == DialogResult.Yes)
+                {
+                    //Xoa trong DataTable
+                    bs.RemoveCurrent();
+                    //Xoa trong CSDL
+                    int n = adpSinhVien.Update(ds, "SINHVIEN");
+                    if (n > 0)
+                        MessageBox.Show("Xoa sinh vien thanh cong");
+                }
+            }
+        }
+
         private void DocDuLieu()
         {
             //Sao chep cau truc va dua du lieu tu CSDL vao DataTable
