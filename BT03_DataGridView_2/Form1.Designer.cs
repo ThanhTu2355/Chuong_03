@@ -29,8 +29,8 @@ namespace BT03_DataGridView_2
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvMonHoc = new System.Windows.Forms.DataGridView();
             this.colMaMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,18 +55,19 @@ namespace BT03_DataGridView_2
             this.dgvMonHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvMonHoc.Size = new System.Drawing.Size(641, 344);
             this.dgvMonHoc.TabIndex = 0;
+            this.dgvMonHoc.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMonHoc_CellContentClick);
             // 
             // colMaMH
             // 
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Red;
-            this.colMaMH.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
+            this.colMaMH.DefaultCellStyle = dataGridViewCellStyle1;
             this.colMaMH.HeaderText = "Mã môn";
             this.colMaMH.Name = "colMaMH";
             // 
             // colTenMH
             // 
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Blue;
-            this.colTenMH.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
+            this.colTenMH.DefaultCellStyle = dataGridViewCellStyle2;
             this.colTenMH.HeaderText = "Tên môn học";
             this.colTenMH.Name = "colTenMH";
             this.colTenMH.Width = 300;

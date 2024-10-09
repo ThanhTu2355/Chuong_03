@@ -25,5 +25,10 @@ namespace BT03_DataGridView_2
             dgvMonHoc.Rows.Add("04", "Nhập môn lập trình", 90, "Bắt buộc");
             dgvMonHoc.Rows.Add("05", "Lập trình Java cơ bản", 90, "Bắt buộc");
         }
+
+        private void dgvMonHoc_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
