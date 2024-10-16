@@ -86,6 +86,53 @@ namespace BT05_DataGridView_4_SQLServer
             bs.CancelEdit();
         }
 
+        private void btnGhi_Click(object sender, EventArgs e)
+        {
+            if (txtMaMH.ReadOnly == false)//ghi khi them moi
+            {
+                //Kiem tra MaSV bi trung
+                DataRow r = ds.Tables["MONHOC"].Rows.Find(txtMaMH.Text);
+                if (r != null)
+                {
+                    MessageBox.Show("MonHoc bi trung. Moi nhap lai", "Trung khoa chinh");
+                    txtMaMH.Focus();
+                    return;
+                }
+            }
+            //Cap nhat lai viec them moi hay sua trong Database
+            bs.EndEdit();
+            //Cap nhat trong CSDL
+            int n = adpMonHoc.Update(ds, "MONHOC");
+            if (n > 0)
+                MessageBox.Show("Cap nhat (THEM/SUA) thanh cong");
+            txtMaMH.ReadOnly = true;
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            //Xac dinh dong can huy Su dung ham Find
+            DataRow rmh = (bs.Current as DataRowView).Row;
+            //Can kien tra Neu rmh ton tai trong tblKetQua thi khong xoa. Nguoc lai thi cho xoa
+            //Su dung ham getChilRow de kiem tra nhung dong lien quan co ton tai hay khong. Gia tri tra ve la mang
+            DataRow[] mangDongLienQuan = rmh.GetChildRows("FK_MONHOC_KETQUA");
+            if (mangDongLienQuan.Length > 0)//co ton tai nhung dong lien quan trong tblKetQua
+                MessageBox.Show("Khong xoa duoc MonHoc vi da co SinhVien thi","Thong bao loi xoa Mon Hoc",MessageBoxButtons.OK,MessageBoxIcon.Error);
+            else
+            {
+                DialogResult tl;
+                tl = MessageBox.Show("Xoa MonHoc nay khong?", "Can than", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (tl == DialogResult.Yes)
+                {
+                    //Xoa trong DataTable
+                    bs.RemoveCurrent();
+                    //Xoa trong CSDL
+                    int n = adpMonHoc.Update(ds, "MONHOC");
+                    if (n > 0)
+                        MessageBox.Show("Xoa MonHoc thanh cong");
+                }
+            }
+        }
+
         private void KhoiTaoCacDoiTuong()
         {
             //1. Khoi tao cac doi tuong DataAdapter

@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT04_DataGridView_3", "BT04
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT05_DataGridView_4_SQLServer", "BT05_DataGridView_4_SQLServer\BT05_DataGridView_4_SQLServer.csproj", "{860E9804-17B3-4A4A-8063-B3FCEBF2FBB5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT06_MonHoc_Dataset_CoDinhKieu", "BT06_MonHoc_Dataset_CoDinhKieu\BT06_MonHoc_Dataset_CoDinhKieu.csproj", "{1AB80032-F4D6-411B-9396-CB9701C8A83F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{860E9804-17B3-4A4A-8063-B3FCEBF2FBB5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{860E9804-17B3-4A4A-8063-B3FCEBF2FBB5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{860E9804-17B3-4A4A-8063-B3FCEBF2FBB5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1AB80032-F4D6-411B-9396-CB9701C8A83F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AB80032-F4D6-411B-9396-CB9701C8A83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AB80032-F4D6-411B-9396-CB9701C8A83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AB80032-F4D6-411B-9396-CB9701C8A83F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

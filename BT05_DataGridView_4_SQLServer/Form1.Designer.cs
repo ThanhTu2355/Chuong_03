@@ -30,10 +30,10 @@ namespace BT05_DataGridView_4_SQLServer
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnKhong = new System.Windows.Forms.Button();
             this.btnGhi = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -45,21 +45,21 @@ namespace BT05_DataGridView_4_SQLServer
             this.txtMaMH = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvMonHoc = new System.Windows.Forms.DataGridView();
+            this.colMaMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colSoTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bdnMonHoc = new System.Windows.Forms.BindingNavigator(this.components);
+            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
+            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
+            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorPositionItem = new System.Windows.Forms.ToolStripTextBox();
-            this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.colMaMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdnMonHoc)).BeginInit();
             this.bdnMonHoc.SuspendLayout();
@@ -87,6 +87,7 @@ namespace BT05_DataGridView_4_SQLServer
             this.btnGhi.TabIndex = 17;
             this.btnGhi.Text = "Ghi";
             this.btnGhi.UseVisualStyleBackColor = true;
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
             // 
             // btnHuy
             // 
@@ -98,6 +99,7 @@ namespace BT05_DataGridView_4_SQLServer
             this.btnHuy.TabIndex = 16;
             this.btnHuy.Text = "Huỷ";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThem
             // 
@@ -176,6 +178,32 @@ namespace BT05_DataGridView_4_SQLServer
             this.dgvMonHoc.Size = new System.Drawing.Size(543, 216);
             this.dgvMonHoc.TabIndex = 8;
             // 
+            // colMaMH
+            // 
+            this.colMaMH.DataPropertyName = "MaMH";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Red;
+            this.colMaMH.DefaultCellStyle = dataGridViewCellStyle4;
+            this.colMaMH.HeaderText = "Mã môn";
+            this.colMaMH.Name = "colMaMH";
+            // 
+            // colTenMH
+            // 
+            this.colTenMH.DataPropertyName = "TenMH";
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Blue;
+            this.colTenMH.DefaultCellStyle = dataGridViewCellStyle5;
+            this.colTenMH.HeaderText = "Tên môn học";
+            this.colTenMH.Name = "colTenMH";
+            this.colTenMH.Width = 300;
+            // 
+            // colSoTiet
+            // 
+            this.colSoTiet.DataPropertyName = "SoTiet";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSoTiet.DefaultCellStyle = dataGridViewCellStyle6;
+            this.colSoTiet.HeaderText = "Số tiết";
+            this.colSoTiet.Name = "colSoTiet";
+            // 
             // bdnMonHoc
             // 
             this.bdnMonHoc.AddNewItem = this.bindingNavigatorAddNewItem;
@@ -204,6 +232,31 @@ namespace BT05_DataGridView_4_SQLServer
             this.bdnMonHoc.Size = new System.Drawing.Size(543, 25);
             this.bdnMonHoc.TabIndex = 19;
             this.bdnMonHoc.Text = "bindingNavigator1";
+            // 
+            // bindingNavigatorAddNewItem
+            // 
+            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
+            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
+            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorAddNewItem.Text = "Add new";
+            // 
+            // bindingNavigatorCountItem
+            // 
+            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Text = "of {0}";
+            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
+            // 
+            // bindingNavigatorDeleteItem
+            // 
+            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
+            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
+            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
+            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -238,16 +291,9 @@ namespace BT05_DataGridView_4_SQLServer
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Current position";
             // 
-            // bindingNavigatorCountItem
-            // 
-            this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
-            this.bindingNavigatorCountItem.Text = "of {0}";
-            this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
             // bindingNavigatorSeparator1
             // 
-            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
             // 
             // bindingNavigatorMoveNextItem
@@ -270,52 +316,8 @@ namespace BT05_DataGridView_4_SQLServer
             // 
             // bindingNavigatorSeparator2
             // 
-            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator";
+            this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
-            // 
-            // colMaMH
-            // 
-            this.colMaMH.DataPropertyName = "MaMH";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
-            this.colMaMH.DefaultCellStyle = dataGridViewCellStyle7;
-            this.colMaMH.HeaderText = "Mã môn";
-            this.colMaMH.Name = "colMaMH";
-            // 
-            // colTenMH
-            // 
-            this.colTenMH.DataPropertyName = "TenMH";
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Blue;
-            this.colTenMH.DefaultCellStyle = dataGridViewCellStyle8;
-            this.colTenMH.HeaderText = "Tên môn học";
-            this.colTenMH.Name = "colTenMH";
-            this.colTenMH.Width = 300;
-            // 
-            // colSoTiet
-            // 
-            this.colSoTiet.DataPropertyName = "SoTiet";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colSoTiet.DefaultCellStyle = dataGridViewCellStyle9;
-            this.colSoTiet.HeaderText = "Số tiết";
-            this.colSoTiet.Name = "colSoTiet";
             // 
             // Form1
             // 
@@ -335,7 +337,7 @@ namespace BT05_DataGridView_4_SQLServer
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvMonHoc);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
