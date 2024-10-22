@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.34031.81
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34714.143
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT00", "BT00\BT00.csproj", "{22DE79C4-0EE2-47EA-8B73-D2FF9BF27C5F}"
 EndProject
@@ -16,6 +16,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT05_DataGridView_4_SQLServer", "BT05_DataGridView_4_SQLServer\BT05_DataGridView_4_SQLServer.csproj", "{860E9804-17B3-4A4A-8063-B3FCEBF2FBB5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT06_MonHoc_Dataset_CoDinhKieu", "BT06_MonHoc_Dataset_CoDinhKieu\BT06_MonHoc_Dataset_CoDinhKieu.csproj", "{1AB80032-F4D6-411B-9396-CB9701C8A83F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BT07_MainSub_SV_KQ", "BT07_MainSub_SV_KQ\BT07_MainSub_SV_KQ.csproj", "{0953A892-65CF-4761-8CD6-4439A235865D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{1AB80032-F4D6-411B-9396-CB9701C8A83F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1AB80032-F4D6-411B-9396-CB9701C8A83F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1AB80032-F4D6-411B-9396-CB9701C8A83F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0953A892-65CF-4761-8CD6-4439A235865D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0953A892-65CF-4761-8CD6-4439A235865D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0953A892-65CF-4761-8CD6-4439A235865D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0953A892-65CF-4761-8CD6-4439A235865D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
