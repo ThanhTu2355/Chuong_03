@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.label8 = new System.Windows.Forms.Label();
             this.chkPhai = new System.Windows.Forms.CheckBox();
@@ -41,7 +41,7 @@
             this.btnSau = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
             this.btnTruoc = new System.Windows.Forms.Button();
-            this.cboMaKhoa = new System.Windows.Forms.ComboBox();
+            this.cboMaKH = new System.Windows.Forms.ComboBox();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
             this.txtTenSV = new System.Windows.Forms.TextBox();
             this.txtHoSV = new System.Windows.Forms.TextBox();
@@ -57,7 +57,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgvMonHoc = new System.Windows.Forms.DataGridView();
+            this.dgvKetQua = new System.Windows.Forms.DataGridView();
             this.colMaMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTenMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colSoTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -72,10 +72,10 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
-            this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
-            this.bindingNavigator1.SuspendLayout();
+            this.bdnSVKQ = new System.Windows.Forms.BindingNavigator(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKetQua)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnSVKQ)).BeginInit();
+            this.bdnSVKQ.SuspendLayout();
             this.SuspendLayout();
             // 
             // label8
@@ -110,6 +110,7 @@
             this.btnKhong.TabIndex = 67;
             this.btnKhong.Text = "Không";
             this.btnKhong.UseVisualStyleBackColor = true;
+            this.btnKhong.Click += new System.EventHandler(this.btnKhong_Click);
             // 
             // btnGhi
             // 
@@ -143,6 +144,7 @@
             this.btnSau.TabIndex = 63;
             this.btnSau.Text = "Sau";
             this.btnSau.UseVisualStyleBackColor = true;
+            this.btnSau.Click += new System.EventHandler(this.btnSau_Click);
             // 
             // btnThem
             // 
@@ -154,6 +156,7 @@
             this.btnThem.TabIndex = 64;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnTruoc
             // 
@@ -165,14 +168,16 @@
             this.btnTruoc.TabIndex = 62;
             this.btnTruoc.Text = "Trước";
             this.btnTruoc.UseVisualStyleBackColor = true;
+            this.btnTruoc.Click += new System.EventHandler(this.btnTruoc_Click);
             // 
-            // cboMaKhoa
+            // cboMaKH
             // 
-            this.cboMaKhoa.FormattingEnabled = true;
-            this.cboMaKhoa.Location = new System.Drawing.Point(349, 161);
-            this.cboMaKhoa.Name = "cboMaKhoa";
-            this.cboMaKhoa.Size = new System.Drawing.Size(127, 27);
-            this.cboMaKhoa.TabIndex = 58;
+            this.cboMaKH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMaKH.FormattingEnabled = true;
+            this.cboMaKH.Location = new System.Drawing.Point(349, 161);
+            this.cboMaKH.Name = "cboMaKH";
+            this.cboMaKH.Size = new System.Drawing.Size(127, 27);
+            this.cboMaKH.TabIndex = 58;
             // 
             // dtpNgaySinh
             // 
@@ -227,8 +232,10 @@
             // 
             // txtTongDiem
             // 
+            this.txtTongDiem.BackColor = System.Drawing.Color.Yellow;
             this.txtTongDiem.Location = new System.Drawing.Point(350, 193);
             this.txtTongDiem.Name = "txtTongDiem";
+            this.txtTongDiem.ReadOnly = true;
             this.txtTongDiem.Size = new System.Drawing.Size(126, 26);
             this.txtTongDiem.TabIndex = 61;
             // 
@@ -299,28 +306,28 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "MaSV";
             // 
-            // dgvMonHoc
+            // dgvKetQua
             // 
-            this.dgvMonHoc.AllowUserToAddRows = false;
-            this.dgvMonHoc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMonHoc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvKetQua.AllowUserToAddRows = false;
+            this.dgvKetQua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvKetQua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaMH,
             this.colTenMH,
             this.colSoTiet});
-            this.dgvMonHoc.Location = new System.Drawing.Point(0, 275);
-            this.dgvMonHoc.MultiSelect = false;
-            this.dgvMonHoc.Name = "dgvMonHoc";
-            this.dgvMonHoc.RowHeadersWidth = 51;
-            this.dgvMonHoc.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvMonHoc.Size = new System.Drawing.Size(543, 216);
-            this.dgvMonHoc.TabIndex = 69;
+            this.dgvKetQua.Location = new System.Drawing.Point(0, 275);
+            this.dgvKetQua.MultiSelect = false;
+            this.dgvKetQua.Name = "dgvKetQua";
+            this.dgvKetQua.RowHeadersWidth = 51;
+            this.dgvKetQua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvKetQua.Size = new System.Drawing.Size(543, 158);
+            this.dgvKetQua.TabIndex = 69;
             // 
             // colMaMH
             // 
             this.colMaMH.DataPropertyName = "MaMH";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Red;
-            this.colMaMH.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Red;
+            this.colMaMH.DefaultCellStyle = dataGridViewCellStyle22;
             this.colMaMH.HeaderText = "Mã môn";
             this.colMaMH.MinimumWidth = 6;
             this.colMaMH.Name = "colMaMH";
@@ -329,8 +336,8 @@
             // colTenMH
             // 
             this.colTenMH.DataPropertyName = "TenMH";
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Blue;
-            this.colTenMH.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Blue;
+            this.colTenMH.DefaultCellStyle = dataGridViewCellStyle23;
             this.colTenMH.HeaderText = "Tên môn học";
             this.colTenMH.MinimumWidth = 6;
             this.colTenMH.Name = "colTenMH";
@@ -339,8 +346,8 @@
             // colSoTiet
             // 
             this.colSoTiet.DataPropertyName = "SoTiet";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colSoTiet.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.colSoTiet.DefaultCellStyle = dataGridViewCellStyle24;
             this.colSoTiet.HeaderText = "Số tiết";
             this.colSoTiet.MinimumWidth = 6;
             this.colSoTiet.Name = "colSoTiet";
@@ -432,14 +439,14 @@
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(24, 24);
             this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
-            // bindingNavigator1
+            // bdnSVKQ
             // 
-            this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
-            this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.bindingNavigator1.ImageScalingSize = new System.Drawing.Size(20, 20);
-            this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.bdnSVKQ.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.bdnSVKQ.CountItem = this.bindingNavigatorCountItem;
+            this.bdnSVKQ.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.bdnSVKQ.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.bdnSVKQ.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.bdnSVKQ.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -451,24 +458,24 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(0, 495);
-            this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.bindingNavigator1.Name = "bindingNavigator1";
-            this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem;
-            this.bindingNavigator1.Size = new System.Drawing.Size(540, 27);
-            this.bindingNavigator1.TabIndex = 70;
-            this.bindingNavigator1.Text = "bindingNavigator1";
+            this.bdnSVKQ.Location = new System.Drawing.Point(0, 434);
+            this.bdnSVKQ.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.bdnSVKQ.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.bdnSVKQ.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.bdnSVKQ.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.bdnSVKQ.Name = "bdnSVKQ";
+            this.bdnSVKQ.PositionItem = this.bindingNavigatorPositionItem;
+            this.bdnSVKQ.Size = new System.Drawing.Size(540, 27);
+            this.bdnSVKQ.TabIndex = 70;
+            this.bdnSVKQ.Text = "bindingNavigator1";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 522);
-            this.Controls.Add(this.bindingNavigator1);
-            this.Controls.Add(this.dgvMonHoc);
+            this.ClientSize = new System.Drawing.Size(540, 461);
+            this.Controls.Add(this.bdnSVKQ);
+            this.Controls.Add(this.dgvKetQua);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.chkPhai);
             this.Controls.Add(this.btnKhong);
@@ -477,7 +484,7 @@
             this.Controls.Add(this.btnSau);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.btnTruoc);
-            this.Controls.Add(this.cboMaKhoa);
+            this.Controls.Add(this.cboMaKH);
             this.Controls.Add(this.dtpNgaySinh);
             this.Controls.Add(this.txtTenSV);
             this.Controls.Add(this.txtHoSV);
@@ -500,10 +507,11 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Chương 3 - MainSub - Sinh Viên - Kết Quả";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvMonHoc)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
-            this.bindingNavigator1.ResumeLayout(false);
-            this.bindingNavigator1.PerformLayout();
+            this.Load += new System.EventHandler(this.Form1_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvKetQua)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bdnSVKQ)).EndInit();
+            this.bdnSVKQ.ResumeLayout(false);
+            this.bdnSVKQ.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -519,7 +527,7 @@
         private System.Windows.Forms.Button btnSau;
         private System.Windows.Forms.Button btnThem;
         private System.Windows.Forms.Button btnTruoc;
-        private System.Windows.Forms.ComboBox cboMaKhoa;
+        private System.Windows.Forms.ComboBox cboMaKH;
         private System.Windows.Forms.DateTimePicker dtpNgaySinh;
         private System.Windows.Forms.TextBox txtTenSV;
         private System.Windows.Forms.TextBox txtHoSV;
@@ -535,7 +543,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgvMonHoc;
+        private System.Windows.Forms.DataGridView dgvKetQua;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMaMH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colTenMH;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSoTiet;
@@ -550,7 +558,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.BindingNavigator bdnSVKQ;
     }
 }
 

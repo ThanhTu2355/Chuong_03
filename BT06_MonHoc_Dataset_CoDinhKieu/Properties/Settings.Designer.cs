@@ -33,5 +33,16 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.Properties {
                 return ((string)(this["QLSVConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=\"D:\\DATA_LapTrinh\\Git Clone\\Chuong_0" +
+            "3\\DATA\\QLSV.mdb\"")]
+        public string QLSVConnectionString1 {
+            get {
+                return ((string)(this["QLSVConnectionString1"]));
+            }
+        }
     }
 }

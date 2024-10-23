@@ -75,9 +75,9 @@
       <DependentUpon>DsQLSV.xsd</DependentUpon>
     </None>
     <None Include="DsQLSV.xsd">
+      <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
       <LastGenOutput>DsQLSV.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
     </None>
     <None Include="DsQLSV.xss">
       <DependentUpon>DsQLSV.xsd</DependentUpon>

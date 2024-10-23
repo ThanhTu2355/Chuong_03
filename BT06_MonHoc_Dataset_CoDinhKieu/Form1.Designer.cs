@@ -109,6 +109,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu
             this.btnKhong.TabIndex = 141;
             this.btnKhong.Text = "Không";
             this.btnKhong.UseVisualStyleBackColor = true;
+            this.btnKhong.Click += new System.EventHandler(this.btnKhong_Click);
             // 
             // btnGhi
             // 
@@ -120,6 +121,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu
             this.btnGhi.TabIndex = 140;
             this.btnGhi.Text = "Ghi";
             this.btnGhi.UseVisualStyleBackColor = true;
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
             // 
             // btnThoat
             // 
@@ -131,6 +133,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu
             this.btnThoat.TabIndex = 138;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnHuy
             // 
@@ -142,6 +145,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu
             this.btnHuy.TabIndex = 139;
             this.btnHuy.Text = "Huỷ";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnDau
             // 
@@ -189,6 +193,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu
             this.btnThem.TabIndex = 137;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // btnTruoc
             // 
@@ -241,6 +246,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu
             this.txtMaxDiem.BackColor = System.Drawing.Color.Yellow;
             this.txtMaxDiem.Location = new System.Drawing.Point(339, 192);
             this.txtMaxDiem.Name = "txtMaxDiem";
+            this.txtMaxDiem.ReadOnly = true;
             this.txtMaxDiem.Size = new System.Drawing.Size(102, 26);
             this.txtMaxDiem.TabIndex = 132;
             // 
@@ -249,6 +255,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu
             this.txtTSSV.BackColor = System.Drawing.Color.Yellow;
             this.txtTSSV.Location = new System.Drawing.Point(111, 192);
             this.txtTSSV.Name = "txtTSSV";
+            this.txtTSSV.ReadOnly = true;
             this.txtTSSV.Size = new System.Drawing.Size(103, 26);
             this.txtTSSV.TabIndex = 131;
             // 

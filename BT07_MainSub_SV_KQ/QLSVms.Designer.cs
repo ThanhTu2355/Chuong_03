@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace BT06_MonHoc_Dataset_CoDinhKieu {
+namespace BT07_MainSub_SV_KQ {
     
     
     /// <summary>
@@ -20,9 +20,9 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("DsQLSV")]
+    [global::System.Xml.Serialization.XmlRootAttribute("QLSVms")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class DsQLSV : global::System.Data.DataSet {
+    public partial class QLSVms : global::System.Data.DataSet {
         
         private KETQUADataTable tableKETQUA;
         
@@ -42,24 +42,28 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public DsQLSV() {
+        public QLSVms() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
             base.Tables.CollectionChanged += schemaChangedHandler;
             base.Relations.CollectionChanged += schemaChangedHandler;
             this.EndInit();
+            this.InitExpressions();
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected DsQLSV(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected QLSVms(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
                 global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler1 = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
                 this.Tables.CollectionChanged += schemaChangedHandler1;
                 this.Relations.CollectionChanged += schemaChangedHandler1;
+                if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.ExcludeSchema)) {
+                    this.InitExpressions();
+                }
                 return;
             }
             string strSchema = ((string)(info.GetValue("XmlSchema", typeof(string))));
@@ -89,6 +93,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             }
             else {
                 this.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
+                this.InitExpressions();
             }
             this.GetSerializationData(info, context);
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -178,8 +183,9 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            DsQLSV cln = ((DsQLSV)(base.Clone()));
+            QLSVms cln = ((QLSVms)(base.Clone()));
             cln.InitVars();
+            cln.InitExpressions();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
         }
@@ -280,12 +286,12 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "DsQLSV";
+            this.DataSetName = "QLSVms";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/DsQLSV.xsd";
+            this.Namespace = "http://tempuri.org/QLSVms.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableKETQUA = new KETQUADataTable();
+            this.tableKETQUA = new KETQUADataTable(false);
             base.Tables.Add(this.tableKETQUA);
             this.tableKHOA = new KHOADataTable();
             base.Tables.Add(this.tableKHOA);
@@ -342,7 +348,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            DsQLSV ds = new DsQLSV();
+            QLSVms ds = new QLSVms();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -386,6 +392,12 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             return type;
         }
         
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitExpressions() {
+            this.KETQUA.TenMHColumn.Expression = "parent(MONHOCKETQUA).tenmh";
+        }
+        
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void KETQUARowChangeEventHandler(object sender, KETQUARowChangeEvent e);
         
@@ -411,12 +423,23 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             
             private global::System.Data.DataColumn columnDiem;
             
+            private global::System.Data.DataColumn columnTenMH;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public KETQUADataTable() {
+            public KETQUADataTable() : 
+                    this(false) {
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public KETQUADataTable(bool initExpressions) {
                 this.TableName = "KETQUA";
                 this.BeginInit();
                 this.InitClass();
+                if ((initExpressions == true)) {
+                    this.InitExpressions();
+                }
                 this.EndInit();
             }
             
@@ -470,6 +493,14 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn TenMHColumn {
+                get {
+                    return this.columnTenMH;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -505,12 +536,33 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public KETQUARow AddKETQUARow(SINHVIENRow parentSINHVIENRowBySINHVIENKETQUA, MONHOCRow parentMONHOCRowByMONHOCKETQUA, double Diem, string TenMH) {
+                KETQUARow rowKETQUARow = ((KETQUARow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        null,
+                        Diem,
+                        TenMH};
+                if ((parentSINHVIENRowBySINHVIENKETQUA != null)) {
+                    columnValuesArray[0] = parentSINHVIENRowBySINHVIENKETQUA[0];
+                }
+                if ((parentMONHOCRowByMONHOCKETQUA != null)) {
+                    columnValuesArray[1] = parentMONHOCRowByMONHOCKETQUA[0];
+                }
+                rowKETQUARow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowKETQUARow);
+                return rowKETQUARow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public KETQUARow AddKETQUARow(SINHVIENRow parentSINHVIENRowBySINHVIENKETQUA, MONHOCRow parentMONHOCRowByMONHOCKETQUA, double Diem) {
                 KETQUARow rowKETQUARow = ((KETQUARow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         null,
-                        Diem};
+                        Diem,
+                        null};
                 if ((parentSINHVIENRowBySINHVIENKETQUA != null)) {
                     columnValuesArray[0] = parentSINHVIENRowBySINHVIENKETQUA[0];
                 }
@@ -550,6 +602,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
                 this.columnMaSV = base.Columns["MaSV"];
                 this.columnMaMH = base.Columns["MaMH"];
                 this.columnDiem = base.Columns["Diem"];
+                this.columnTenMH = base.Columns["TenMH"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -561,6 +614,8 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
                 base.Columns.Add(this.columnMaMH);
                 this.columnDiem = new global::System.Data.DataColumn("Diem", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnDiem);
+                this.columnTenMH = new global::System.Data.DataColumn("TenMH", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTenMH);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnMaSV,
                                 this.columnMaMH}, true));
@@ -568,6 +623,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
                 this.columnMaSV.MaxLength = 3;
                 this.columnMaMH.AllowDBNull = false;
                 this.columnMaMH.MaxLength = 2;
+                this.columnTenMH.ReadOnly = true;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -586,6 +642,12 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
                 return typeof(KETQUARow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitExpressions() {
+                this.TenMHColumn.Expression = "parent(MONHOCKETQUA).tenmh";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -635,7 +697,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DsQLSV ds = new DsQLSV();
+                QLSVms ds = new QLSVms();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -909,7 +971,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DsQLSV ds = new DsQLSV();
+                QLSVms ds = new QLSVms();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1211,7 +1273,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DsQLSV ds = new DsQLSV();
+                QLSVms ds = new QLSVms();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1575,7 +1637,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DsQLSV ds = new DsQLSV();
+                QLSVms ds = new QLSVms();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1688,6 +1750,22 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string TenMH {
+                get {
+                    try {
+                        return ((string)(this[this.tableKETQUA.TenMHColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenMH\' in table \'KETQUA\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableKETQUA.TenMHColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MONHOCRow MONHOCRow {
                 get {
                     return ((MONHOCRow)(this.GetParentRow(this.Table.ParentRelations["MONHOCKETQUA"])));
@@ -1718,6 +1796,18 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void SetDiemNull() {
                 this[this.tableKETQUA.DiemColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsTenMHNull() {
+                return this.IsNull(this.tableKETQUA.TenMHColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetTenMHNull() {
+                this[this.tableKETQUA.TenMHColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -2288,7 +2378,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu {
         }
     }
 }
-namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
+namespace BT07_MainSub_SV_KQ.QLSVmsTableAdapters {
     
     
     /// <summary>
@@ -2450,7 +2540,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BT06_MonHoc_Dataset_CoDinhKieu.Properties.Settings.Default.QLSVConnectionString1;
+            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2467,7 +2557,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsQLSV.KETQUADataTable dataTable) {
+        public virtual int Fill(QLSVms.KETQUADataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2480,9 +2570,9 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DsQLSV.KETQUADataTable GetData() {
+        public virtual QLSVms.KETQUADataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DsQLSV.KETQUADataTable dataTable = new DsQLSV.KETQUADataTable();
+            QLSVms.KETQUADataTable dataTable = new QLSVms.KETQUADataTable(true);
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2490,14 +2580,14 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsQLSV.KETQUADataTable dataTable) {
+        public virtual int Update(QLSVms.KETQUADataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsQLSV dataSet) {
+        public virtual int Update(QLSVms dataSet) {
             return this.Adapter.Update(dataSet, "KETQUA");
         }
         
@@ -2818,7 +2908,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BT06_MonHoc_Dataset_CoDinhKieu.Properties.Settings.Default.QLSVConnectionString1;
+            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2835,7 +2925,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsQLSV.KHOADataTable dataTable) {
+        public virtual int Fill(QLSVms.KHOADataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2848,9 +2938,9 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DsQLSV.KHOADataTable GetData() {
+        public virtual QLSVms.KHOADataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DsQLSV.KHOADataTable dataTable = new DsQLSV.KHOADataTable();
+            QLSVms.KHOADataTable dataTable = new QLSVms.KHOADataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2858,14 +2948,14 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsQLSV.KHOADataTable dataTable) {
+        public virtual int Update(QLSVms.KHOADataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsQLSV dataSet) {
+        public virtual int Update(QLSVms dataSet) {
             return this.Adapter.Update(dataSet, "KHOA");
         }
         
@@ -3179,7 +3269,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BT06_MonHoc_Dataset_CoDinhKieu.Properties.Settings.Default.QLSVConnectionString1;
+            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3196,7 +3286,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsQLSV.MONHOCDataTable dataTable) {
+        public virtual int Fill(QLSVms.MONHOCDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3209,9 +3299,9 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DsQLSV.MONHOCDataTable GetData() {
+        public virtual QLSVms.MONHOCDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DsQLSV.MONHOCDataTable dataTable = new DsQLSV.MONHOCDataTable();
+            QLSVms.MONHOCDataTable dataTable = new QLSVms.MONHOCDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3219,14 +3309,14 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsQLSV.MONHOCDataTable dataTable) {
+        public virtual int Update(QLSVms.MONHOCDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsQLSV dataSet) {
+        public virtual int Update(QLSVms dataSet) {
             return this.Adapter.Update(dataSet, "MONHOC");
         }
         
@@ -3598,7 +3688,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BT06_MonHoc_Dataset_CoDinhKieu.Properties.Settings.Default.QLSVConnectionString1;
+            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3615,7 +3705,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DsQLSV.SINHVIENDataTable dataTable) {
+        public virtual int Fill(QLSVms.SINHVIENDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3628,9 +3718,9 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DsQLSV.SINHVIENDataTable GetData() {
+        public virtual QLSVms.SINHVIENDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            DsQLSV.SINHVIENDataTable dataTable = new DsQLSV.SINHVIENDataTable();
+            QLSVms.SINHVIENDataTable dataTable = new QLSVms.SINHVIENDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3638,14 +3728,14 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsQLSV.SINHVIENDataTable dataTable) {
+        public virtual int Update(QLSVms.SINHVIENDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(DsQLSV dataSet) {
+        public virtual int Update(QLSVms dataSet) {
             return this.Adapter.Update(dataSet, "SINHVIEN");
         }
         
@@ -4110,7 +4200,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(DsQLSV dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(QLSVms dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._kHOATableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.KHOA.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -4156,7 +4246,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(DsQLSV dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(QLSVms dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._kHOATableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.KHOA.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -4198,7 +4288,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(DsQLSV dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(QLSVms dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._kETQUATableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.KETQUA.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -4264,7 +4354,7 @@ namespace BT06_MonHoc_Dataset_CoDinhKieu.DsQLSVTableAdapters {
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(DsQLSV dataSet) {
+        public virtual int UpdateAll(QLSVms dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
