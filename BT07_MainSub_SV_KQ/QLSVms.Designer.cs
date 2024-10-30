@@ -395,7 +395,7 @@ namespace BT07_MainSub_SV_KQ {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitExpressions() {
-            this.KETQUA.TenMHColumn.Expression = "parent(MONHOCKETQUA).tenmh";
+            this.KETQUA.TenMHColumn.Expression = "parent(MONHOCKETQUA).TenMH";
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -647,7 +647,7 @@ namespace BT07_MainSub_SV_KQ {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitExpressions() {
-                this.TenMHColumn.Expression = "parent(MONHOCKETQUA).tenmh";
+                this.TenMHColumn.Expression = "parent(MONHOCKETQUA).TenMH";
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2540,7 +2540,7 @@ namespace BT07_MainSub_SV_KQ.QLSVmsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString;
+            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2908,7 +2908,7 @@ namespace BT07_MainSub_SV_KQ.QLSVmsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString;
+            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3269,7 +3269,7 @@ namespace BT07_MainSub_SV_KQ.QLSVmsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString;
+            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3688,7 +3688,7 @@ namespace BT07_MainSub_SV_KQ.QLSVmsTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.OleDb.OleDbConnection();
-            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString;
+            this._connection.ConnectionString = global::BT07_MainSub_SV_KQ.Properties.Settings.Default.QLSVConnectionString1;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

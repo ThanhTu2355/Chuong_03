@@ -123,5 +123,97 @@ namespace BT07_MainSub_SV_KQ
             bsSV.Position = stt;
             txtMaSV.ReadOnly = true;
         }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            //Kiểm tra có tồn tại các mẫu có liên quan trong KETQUA hay không
+            QLSVms.SINHVIENRow rSV = (bsSV.Current as DataRowView).Row as QLSVms.SINHVIENRow;
+            if (rSV.GetKETQUARows().Length > 0)
+            {
+                MessageBox.Show("SINH VIÊN này đã dự thi, không huỷ được", "Thông báo xoá",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            DialogResult tl;
+            tl = MessageBox.Show("Bạn có muốn xoá SINH VIÊN:" + "\r\n" +
+                "   + MaSV: " + txtMaSV.Text + "\r\n" +
+                "   + Họ tên: " + txtHoSV.Text + ' ' + txtTenSV.Text + "\r\n" +
+                " này không?", "Xoá SINH VIÊN", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (tl == DialogResult.Yes)
+            {
+                //Xoa trong DataTable
+                bsSV.RemoveCurrent();
+                //Xoa trong CSDL
+                int n = adpMonHoc.Update(ds.MONHOC);
+                if (n > 0)
+                    MessageBox.Show("Xoá SINH VIÊN thành công", "Xoá SINH VIÊN", MessageBoxButtons.OK);
+            }
+        }
+
+        private void btnGhi_Click(object sender, EventArgs e)
+        {
+            if (txtMaSV.ReadOnly == false)//Them moi
+            {
+                QLSVms.SINHVIENRow rSV = ds.SINHVIEN.FindByMaSV(txtMaSV.Text);
+                if (rSV != null)
+                {
+                    MessageBox.Show("Mã sinh viên: " + txtMaSV.Text + "vừa nhập bị trùng, mời nhập lại", "Thông báo trùng", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtMaSV.Clear();
+                    txtMaSV.Focus();
+                    return;
+                }
+                txtMaSV.ReadOnly = true;
+                //Cập nhật lại việc thêm mới hay sửa vào trong Data Table
+                bsSV.EndEdit();
+                int n = adpSinhVien.Update(ds.SINHVIEN);
+                if (n > 0)
+                    MessageBox.Show("Cập nhật (THÊM/XOÁ) cho SINH VIÊN:" + "\r\n" +
+                "   + MaSV: " + txtMaSV.Text + "\r\n" +
+                "   + Họ tên: " + txtHoSV.Text + ' ' + txtTenSV.Text + "\r\n" +
+                " thành công", "Cập nhật SINH VIÊN", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dgvKetQua_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            //Xử lý cập nhật trên DataGridView
+            //1. Khi là dòng trống, thì không làm gì hết nếu click chọn dòng khác
+            if (dgvKetQua.CurrentRow.IsNewRow == true) return;
+            //2. Dòng có chỉnh sửa: Thêm mới hay dòng đang chỉnh sửa
+            if (dgvKetQua.IsCurrentRowDirty == true)
+            {
+                if ((dgvKetQua.CurrentRow.DataBoundItem as DataRowView).IsNew == true)
+                {
+                    //Kiểm tra khoá chính có bị trùng hay không
+                    if (ds.KETQUA.FindByMaSVMaMH(dgvKetQua.CurrentRow.Cells["MaSV"].Value.ToString(),
+                        dgvKetQua.CurrentRow.Cells["colMaMH"].Value.ToString())!=null)
+                    {
+                        MessageBox.Show("Môn học này sinh viên đã thi , vui lòng chọn môn học khác",
+                            "Thông báo lỗi bị trùng Mã môn học", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        e.Cancel = true;
+                        //Cho Ô maxMH là hiện hành
+                        dgvKetQua.CurrentCell = dgvKetQua.CurrentRow.Cells["colMaMH"];
+                        return;
+                    }
+                }
+                //Kết thúc quá trình chỉnh sửa
+                (dgvKetQua.CurrentRow.DataBoundItem as DataRowView).EndEdit();
+                //Cập nhật về CSDL
+                int n = adpKetQua.Update(ds.KETQUA);
+                if(n>0)
+                    MessageBox.Show("Cập nhật điểm thi cho sinh viên thành công",
+                            "Cập nhật kết quả thành công", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+
+        private void dgvKetQua_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            //Xảy ra khi người dùng chọn 1 dòng và bấm phím Delete
+            //Cập nhật về CSDL
+            int n = adpKetQua.Update(ds.KETQUA);
+            if (n > 0)
+                MessageBox.Show("Huỷ kết quả điểm thành công",
+                        "Huỷ kết quả điểm", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }

@@ -4,12 +4,12 @@
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
       <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
-          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLSVConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLSVConnectionString (Settings)" PropertyReference="ApplicationSettings.BT07_MainSub_SV_KQ.Properties.Settings.GlobalReference.Default.QLSVConnectionString" Provider="System.Data.OleDb" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="QLSVConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="QLSVConnectionString1 (Settings)" PropertyReference="ApplicationSettings.BT07_MainSub_SV_KQ.Properties.Settings.GlobalReference.Default.QLSVConnectionString1" Provider="System.Data.OleDb" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KETQUATableAdapter" GeneratorDataComponentClassName="KETQUATableAdapter" Name="KETQUA" UserDataComponentName="KETQUATableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLSVConnectionString (Settings)" DbObjectName="KETQUA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLSVConnectionString1 (Settings)" DbObjectName="KETQUA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `KETQUA` WHERE ((`MaSV` = ?) AND (`MaMH` = ?) AND ((? = 1 AND `Diem` IS NULL) OR (`Diem` = ?)))</CommandText>
@@ -62,7 +62,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="KHOATableAdapter" GeneratorDataComponentClassName="KHOATableAdapter" Name="KHOA" UserDataComponentName="KHOATableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLSVConnectionString (Settings)" DbObjectName="KHOA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLSVConnectionString1 (Settings)" DbObjectName="KHOA" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `KHOA` WHERE ((`MaKH` = ?) AND ((? = 1 AND `TenKH` IS NULL) OR (`TenKH` = ?)))</CommandText>
@@ -110,7 +110,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MONHOCTableAdapter" GeneratorDataComponentClassName="MONHOCTableAdapter" Name="MONHOC" UserDataComponentName="MONHOCTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLSVConnectionString (Settings)" DbObjectName="MONHOC" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLSVConnectionString1 (Settings)" DbObjectName="MONHOC" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `MONHOC` WHERE ((`MaMH` = ?) AND ((? = 1 AND `TenMH` IS NULL) OR (`TenMH` = ?)) AND ((? = 1 AND `SoTiet` IS NULL) OR (`SoTiet` = ?)) AND ((? = 1 AND `LoaiMH` IS NULL) OR (`LoaiMH` = ?)))</CommandText>
@@ -172,7 +172,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SINHVIENTableAdapter" GeneratorDataComponentClassName="SINHVIENTableAdapter" Name="SINHVIEN" UserDataComponentName="SINHVIENTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="QLSVConnectionString (Settings)" DbObjectName="SINHVIEN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="QLSVConnectionString1 (Settings)" DbObjectName="SINHVIEN" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
                     <CommandText>DELETE FROM `SINHVIEN` WHERE ((`MaSV` = ?) AND ((? = 1 AND `HoSV` IS NULL) OR (`HoSV` = ?)) AND ((? = 1 AND `TenSV` IS NULL) OR (`TenSV` = ?)) AND ((? = 1 AND `Phai` IS NULL) OR (`Phai` = ?)) AND ((? = 1 AND `NgaySinh` IS NULL) OR (`NgaySinh` = ?)) AND ((? = 1 AND `NoiSinh` IS NULL) OR (`NoiSinh` = ?)) AND ((? = 1 AND `MaKH` IS NULL) OR (`MaKH` = ?)) AND ((? = 1 AND `HocBong` IS NULL) OR (`HocBong` = ?)))</CommandText>
@@ -268,7 +268,7 @@
   <xs:element name="QLSVms" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="QLSVms" msprop:Generator_UserDSName="QLSVms">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="KETQUA" msprop:Generator_TableClassName="KETQUADataTable" msprop:Generator_TableVarName="tableKETQUA" msprop:Generator_RowChangedName="KETQUARowChanged" msprop:Generator_TablePropName="KETQUA" msprop:Generator_RowDeletingName="KETQUARowDeleting" msprop:Generator_RowChangingName="KETQUARowChanging" msprop:Generator_RowEvHandlerName="KETQUARowChangeEventHandler" msprop:Generator_RowDeletedName="KETQUARowDeleted" msprop:Generator_RowClassName="KETQUARow" msprop:Generator_UserTableName="KETQUA" msprop:Generator_RowEvArgName="KETQUARowChangeEvent">
+        <xs:element name="KETQUA" msprop:Generator_TableClassName="KETQUADataTable" msprop:Generator_TableVarName="tableKETQUA" msprop:Generator_TablePropName="KETQUA" msprop:Generator_RowDeletingName="KETQUARowDeleting" msprop:Generator_RowChangingName="KETQUARowChanging" msprop:Generator_RowEvHandlerName="KETQUARowChangeEventHandler" msprop:Generator_RowDeletedName="KETQUARowDeleted" msprop:Generator_UserTableName="KETQUA" msprop:Generator_RowChangedName="KETQUARowChanged" msprop:Generator_RowEvArgName="KETQUARowChangeEvent" msprop:Generator_RowClassName="KETQUARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MaSV" msprop:Generator_ColumnVarNameInTable="columnMaSV" msprop:Generator_ColumnPropNameInRow="MaSV" msprop:Generator_ColumnPropNameInTable="MaSVColumn" msprop:Generator_UserColumnName="MaSV">
@@ -286,11 +286,11 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="Diem" msprop:Generator_ColumnVarNameInTable="columnDiem" msprop:Generator_ColumnPropNameInRow="Diem" msprop:Generator_ColumnPropNameInTable="DiemColumn" msprop:Generator_UserColumnName="Diem" type="xs:double" minOccurs="0" />
-              <xs:element name="TenMH" msdata:ReadOnly="true" msdata:Expression="parent(MONHOCKETQUA).tenmh" msprop:Generator_ColumnVarNameInTable="columnTenMH" msprop:Generator_ColumnPropNameInRow="TenMH" msprop:Generator_ColumnPropNameInTable="TenMHColumn" msprop:Generator_UserColumnName="TenMH" type="xs:string" minOccurs="0" />
+              <xs:element name="TenMH" msdata:ReadOnly="true" msdata:Expression="parent(MONHOCKETQUA).TenMH" msprop:Generator_ColumnVarNameInTable="columnTenMH" msprop:Generator_ColumnPropNameInRow="TenMH" msprop:Generator_ColumnPropNameInTable="TenMHColumn" msprop:Generator_UserColumnName="TenMH" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="KHOA" msprop:Generator_TableClassName="KHOADataTable" msprop:Generator_TableVarName="tableKHOA" msprop:Generator_RowChangedName="KHOARowChanged" msprop:Generator_TablePropName="KHOA" msprop:Generator_RowDeletingName="KHOARowDeleting" msprop:Generator_RowChangingName="KHOARowChanging" msprop:Generator_RowEvHandlerName="KHOARowChangeEventHandler" msprop:Generator_RowDeletedName="KHOARowDeleted" msprop:Generator_RowClassName="KHOARow" msprop:Generator_UserTableName="KHOA" msprop:Generator_RowEvArgName="KHOARowChangeEvent">
+        <xs:element name="KHOA" msprop:Generator_TableClassName="KHOADataTable" msprop:Generator_TableVarName="tableKHOA" msprop:Generator_TablePropName="KHOA" msprop:Generator_RowDeletingName="KHOARowDeleting" msprop:Generator_RowChangingName="KHOARowChanging" msprop:Generator_RowEvHandlerName="KHOARowChangeEventHandler" msprop:Generator_RowDeletedName="KHOARowDeleted" msprop:Generator_UserTableName="KHOA" msprop:Generator_RowChangedName="KHOARowChanged" msprop:Generator_RowEvArgName="KHOARowChangeEvent" msprop:Generator_RowClassName="KHOARow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MaKH" msprop:Generator_ColumnVarNameInTable="columnMaKH" msprop:Generator_ColumnPropNameInRow="MaKH" msprop:Generator_ColumnPropNameInTable="MaKHColumn" msprop:Generator_UserColumnName="MaKH">
@@ -310,7 +310,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="MONHOC" msprop:Generator_TableClassName="MONHOCDataTable" msprop:Generator_TableVarName="tableMONHOC" msprop:Generator_RowChangedName="MONHOCRowChanged" msprop:Generator_TablePropName="MONHOC" msprop:Generator_RowDeletingName="MONHOCRowDeleting" msprop:Generator_RowChangingName="MONHOCRowChanging" msprop:Generator_RowEvHandlerName="MONHOCRowChangeEventHandler" msprop:Generator_RowDeletedName="MONHOCRowDeleted" msprop:Generator_RowClassName="MONHOCRow" msprop:Generator_UserTableName="MONHOC" msprop:Generator_RowEvArgName="MONHOCRowChangeEvent">
+        <xs:element name="MONHOC" msprop:Generator_TableClassName="MONHOCDataTable" msprop:Generator_TableVarName="tableMONHOC" msprop:Generator_TablePropName="MONHOC" msprop:Generator_RowDeletingName="MONHOCRowDeleting" msprop:Generator_RowChangingName="MONHOCRowChanging" msprop:Generator_RowEvHandlerName="MONHOCRowChangeEventHandler" msprop:Generator_RowDeletedName="MONHOCRowDeleted" msprop:Generator_UserTableName="MONHOC" msprop:Generator_RowChangedName="MONHOCRowChanged" msprop:Generator_RowEvArgName="MONHOCRowChangeEvent" msprop:Generator_RowClassName="MONHOCRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MaMH" msprop:Generator_ColumnVarNameInTable="columnMaMH" msprop:Generator_ColumnPropNameInRow="MaMH" msprop:Generator_ColumnPropNameInTable="MaMHColumn" msprop:Generator_UserColumnName="MaMH">
@@ -332,7 +332,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SINHVIEN" msprop:Generator_TableClassName="SINHVIENDataTable" msprop:Generator_TableVarName="tableSINHVIEN" msprop:Generator_RowChangedName="SINHVIENRowChanged" msprop:Generator_TablePropName="SINHVIEN" msprop:Generator_RowDeletingName="SINHVIENRowDeleting" msprop:Generator_RowChangingName="SINHVIENRowChanging" msprop:Generator_RowEvHandlerName="SINHVIENRowChangeEventHandler" msprop:Generator_RowDeletedName="SINHVIENRowDeleted" msprop:Generator_RowClassName="SINHVIENRow" msprop:Generator_UserTableName="SINHVIEN" msprop:Generator_RowEvArgName="SINHVIENRowChangeEvent">
+        <xs:element name="SINHVIEN" msprop:Generator_TableClassName="SINHVIENDataTable" msprop:Generator_TableVarName="tableSINHVIEN" msprop:Generator_TablePropName="SINHVIEN" msprop:Generator_RowDeletingName="SINHVIENRowDeleting" msprop:Generator_RowChangingName="SINHVIENRowChanging" msprop:Generator_RowEvHandlerName="SINHVIENRowChangeEventHandler" msprop:Generator_RowDeletedName="SINHVIENRowDeleted" msprop:Generator_UserTableName="SINHVIEN" msprop:Generator_RowChangedName="SINHVIENRowChanged" msprop:Generator_RowEvArgName="SINHVIENRowChangeEvent" msprop:Generator_RowClassName="SINHVIENRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MaSV" msprop:Generator_ColumnVarNameInTable="columnMaSV" msprop:Generator_ColumnPropNameInRow="MaSV" msprop:Generator_ColumnPropNameInTable="MaSVColumn" msprop:Generator_UserColumnName="MaSV">
@@ -398,9 +398,9 @@
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="MONHOCKETQUA" msdata:parent="MONHOC" msdata:child="KETQUA" msdata:parentkey="MaMH" msdata:childkey="MaMH" msprop:Generator_UserChildTable="KETQUA" msprop:Generator_ChildPropName="GetKETQUARows" msprop:Generator_UserRelationName="MONHOCKETQUA" msprop:Generator_ParentPropName="MONHOCRow" msprop:Generator_RelationVarName="relationMONHOCKETQUA" msprop:Generator_UserParentTable="MONHOC" />
-      <msdata:Relationship name="SINHVIENKETQUA" msdata:parent="SINHVIEN" msdata:child="KETQUA" msdata:parentkey="MaSV" msdata:childkey="MaSV" msprop:Generator_UserChildTable="KETQUA" msprop:Generator_ChildPropName="GetKETQUARows" msprop:Generator_UserRelationName="SINHVIENKETQUA" msprop:Generator_ParentPropName="SINHVIENRow" msprop:Generator_RelationVarName="relationSINHVIENKETQUA" msprop:Generator_UserParentTable="SINHVIEN" />
-      <msdata:Relationship name="KHOASINHVIEN" msdata:parent="KHOA" msdata:child="SINHVIEN" msdata:parentkey="MaKH" msdata:childkey="MaKH" msprop:Generator_UserChildTable="SINHVIEN" msprop:Generator_ChildPropName="GetSINHVIENRows" msprop:Generator_UserRelationName="KHOASINHVIEN" msprop:Generator_RelationVarName="relationKHOASINHVIEN" msprop:Generator_UserParentTable="KHOA" msprop:Generator_ParentPropName="KHOARow" />
+      <msdata:Relationship name="MONHOCKETQUA" msdata:parent="MONHOC" msdata:child="KETQUA" msdata:parentkey="MaMH" msdata:childkey="MaMH" msprop:Generator_UserChildTable="KETQUA" msprop:Generator_ChildPropName="GetKETQUARows" msprop:Generator_UserRelationName="MONHOCKETQUA" msprop:Generator_RelationVarName="relationMONHOCKETQUA" msprop:Generator_UserParentTable="MONHOC" msprop:Generator_ParentPropName="MONHOCRow" />
+      <msdata:Relationship name="SINHVIENKETQUA" msdata:parent="SINHVIEN" msdata:child="KETQUA" msdata:parentkey="MaSV" msdata:childkey="MaSV" msprop:Generator_UserChildTable="KETQUA" msprop:Generator_ChildPropName="GetKETQUARows" msprop:Generator_UserRelationName="SINHVIENKETQUA" msprop:Generator_RelationVarName="relationSINHVIENKETQUA" msprop:Generator_UserParentTable="SINHVIEN" msprop:Generator_ParentPropName="SINHVIENRow" />
+      <msdata:Relationship name="KHOASINHVIEN" msdata:parent="KHOA" msdata:child="SINHVIEN" msdata:parentkey="MaKH" msdata:childkey="MaKH" msprop:Generator_UserChildTable="SINHVIEN" msprop:Generator_ChildPropName="GetSINHVIENRows" msprop:Generator_UserRelationName="KHOASINHVIEN" msprop:Generator_ParentPropName="KHOARow" msprop:Generator_RelationVarName="relationKHOASINHVIEN" msprop:Generator_UserParentTable="KHOA" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

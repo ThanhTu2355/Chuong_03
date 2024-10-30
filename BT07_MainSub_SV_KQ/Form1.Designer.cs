@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label8 = new System.Windows.Forms.Label();
             this.chkPhai = new System.Windows.Forms.CheckBox();
             this.btnKhong = new System.Windows.Forms.Button();
@@ -58,9 +57,6 @@
             this.txtMaSV = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvKetQua = new System.Windows.Forms.DataGridView();
-            this.colMaMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTenMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSoTiet = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -73,6 +69,9 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bdnSVKQ = new System.Windows.Forms.BindingNavigator(this.components);
+            this.colMaMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colTenMH = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDiem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvKetQua)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdnSVKQ)).BeginInit();
             this.bdnSVKQ.SuspendLayout();
@@ -122,6 +121,7 @@
             this.btnGhi.TabIndex = 66;
             this.btnGhi.Text = "Ghi";
             this.btnGhi.UseVisualStyleBackColor = true;
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
             // 
             // btnHuy
             // 
@@ -133,6 +133,7 @@
             this.btnHuy.TabIndex = 65;
             this.btnHuy.Text = "Huỷ";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnSau
             // 
@@ -308,12 +309,11 @@
             // 
             // dgvKetQua
             // 
-            this.dgvKetQua.AllowUserToAddRows = false;
             this.dgvKetQua.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvKetQua.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colMaMH,
             this.colTenMH,
-            this.colSoTiet});
+            this.colDiem});
             this.dgvKetQua.Location = new System.Drawing.Point(0, 275);
             this.dgvKetQua.MultiSelect = false;
             this.dgvKetQua.Name = "dgvKetQua";
@@ -321,37 +321,8 @@
             this.dgvKetQua.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvKetQua.Size = new System.Drawing.Size(543, 158);
             this.dgvKetQua.TabIndex = 69;
-            // 
-            // colMaMH
-            // 
-            this.colMaMH.DataPropertyName = "MaMH";
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.Red;
-            this.colMaMH.DefaultCellStyle = dataGridViewCellStyle22;
-            this.colMaMH.HeaderText = "Mã môn";
-            this.colMaMH.MinimumWidth = 6;
-            this.colMaMH.Name = "colMaMH";
-            this.colMaMH.Width = 125;
-            // 
-            // colTenMH
-            // 
-            this.colTenMH.DataPropertyName = "TenMH";
-            dataGridViewCellStyle23.ForeColor = System.Drawing.Color.Blue;
-            this.colTenMH.DefaultCellStyle = dataGridViewCellStyle23;
-            this.colTenMH.HeaderText = "Tên môn học";
-            this.colTenMH.MinimumWidth = 6;
-            this.colTenMH.Name = "colTenMH";
-            this.colTenMH.Width = 300;
-            // 
-            // colSoTiet
-            // 
-            this.colSoTiet.DataPropertyName = "SoTiet";
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.colSoTiet.DefaultCellStyle = dataGridViewCellStyle24;
-            this.colSoTiet.HeaderText = "Số tiết";
-            this.colSoTiet.MinimumWidth = 6;
-            this.colSoTiet.Name = "colSoTiet";
-            this.colSoTiet.Width = 125;
+            this.dgvKetQua.RowValidating += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvKetQua_RowValidating);
+            this.dgvKetQua.UserDeletedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.dgvKetQua_UserDeletedRow);
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -469,6 +440,33 @@
             this.bdnSVKQ.TabIndex = 70;
             this.bdnSVKQ.Text = "bindingNavigator1";
             // 
+            // colMaMH
+            // 
+            this.colMaMH.DataPropertyName = "MaMH";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Red;
+            this.colMaMH.DefaultCellStyle = dataGridViewCellStyle7;
+            this.colMaMH.HeaderText = "Mã môn";
+            this.colMaMH.MinimumWidth = 6;
+            this.colMaMH.Name = "colMaMH";
+            this.colMaMH.Width = 125;
+            // 
+            // colTenMH
+            // 
+            this.colTenMH.DataPropertyName = "TenMH";
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Blue;
+            this.colTenMH.DefaultCellStyle = dataGridViewCellStyle8;
+            this.colTenMH.HeaderText = "Tên môn học";
+            this.colTenMH.MinimumWidth = 6;
+            this.colTenMH.Name = "colTenMH";
+            this.colTenMH.Width = 300;
+            // 
+            // colDiem
+            // 
+            this.colDiem.DataPropertyName = "Diem";
+            this.colDiem.HeaderText = "Điểm";
+            this.colDiem.Name = "colDiem";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -544,9 +542,6 @@
         private System.Windows.Forms.TextBox txtMaSV;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgvKetQua;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMaMH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTenMH;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colSoTiet;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -559,6 +554,9 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.BindingNavigator bdnSVKQ;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMaMH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTenMH;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDiem;
     }
 }
 
