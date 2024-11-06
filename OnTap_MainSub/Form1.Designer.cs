@@ -37,9 +37,9 @@ namespace OnTap_MainSub
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMaKhoa = new System.Windows.Forms.TextBox();
+            this.txtMaKH = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtTenKhoa = new System.Windows.Forms.TextBox();
+            this.txtTenKH = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtTSSV = new System.Windows.Forms.TextBox();
             this.btnSau = new System.Windows.Forms.Button();
@@ -84,13 +84,13 @@ namespace OnTap_MainSub
             this.label1.TabIndex = 0;
             this.label1.Text = "Mã khoa";
             // 
-            // txtMaKhoa
+            // txtMaKH
             // 
-            this.txtMaKhoa.Location = new System.Drawing.Point(115, 65);
-            this.txtMaKhoa.Name = "txtMaKhoa";
-            this.txtMaKhoa.ReadOnly = true;
-            this.txtMaKhoa.Size = new System.Drawing.Size(100, 26);
-            this.txtMaKhoa.TabIndex = 0;
+            this.txtMaKH.Location = new System.Drawing.Point(115, 65);
+            this.txtMaKH.Name = "txtMaKH";
+            this.txtMaKH.ReadOnly = true;
+            this.txtMaKH.Size = new System.Drawing.Size(100, 26);
+            this.txtMaKH.TabIndex = 0;
             // 
             // label2
             // 
@@ -101,12 +101,12 @@ namespace OnTap_MainSub
             this.label2.TabIndex = 0;
             this.label2.Text = "Tên khoa";
             // 
-            // txtTenKhoa
+            // txtTenKH
             // 
-            this.txtTenKhoa.Location = new System.Drawing.Point(115, 102);
-            this.txtTenKhoa.Name = "txtTenKhoa";
-            this.txtTenKhoa.Size = new System.Drawing.Size(164, 26);
-            this.txtTenKhoa.TabIndex = 1;
+            this.txtTenKH.Location = new System.Drawing.Point(115, 102);
+            this.txtTenKH.Name = "txtTenKH";
+            this.txtTenKH.Size = new System.Drawing.Size(164, 26);
+            this.txtTenKH.TabIndex = 1;
             // 
             // label3
             // 
@@ -136,6 +136,7 @@ namespace OnTap_MainSub
             this.btnSau.TabIndex = 4;
             this.btnSau.Text = "Sau";
             this.btnSau.UseVisualStyleBackColor = true;
+            this.btnSau.Click += new System.EventHandler(this.btnSau_Click);
             // 
             // btnTruoc
             // 
@@ -147,6 +148,7 @@ namespace OnTap_MainSub
             this.btnTruoc.TabIndex = 3;
             this.btnTruoc.Text = "Trước";
             this.btnTruoc.UseVisualStyleBackColor = true;
+            this.btnTruoc.Click += new System.EventHandler(this.btnTruoc_Click);
             // 
             // lblSTT
             // 
@@ -167,6 +169,7 @@ namespace OnTap_MainSub
             this.btnKhong.TabIndex = 8;
             this.btnKhong.Text = "Không";
             this.btnKhong.UseVisualStyleBackColor = true;
+            this.btnKhong.Click += new System.EventHandler(this.btnKhong_Click);
             // 
             // btnGhi
             // 
@@ -178,6 +181,7 @@ namespace OnTap_MainSub
             this.btnGhi.TabIndex = 7;
             this.btnGhi.Text = "Ghi";
             this.btnGhi.UseVisualStyleBackColor = true;
+            this.btnGhi.Click += new System.EventHandler(this.btnGhi_Click);
             // 
             // btnHuy
             // 
@@ -189,6 +193,7 @@ namespace OnTap_MainSub
             this.btnHuy.TabIndex = 6;
             this.btnHuy.Text = "Huỷ";
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThem
             // 
@@ -200,6 +205,7 @@ namespace OnTap_MainSub
             this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
             // label8
             // 
@@ -379,6 +385,7 @@ namespace OnTap_MainSub
             // 
             // colPhai
             // 
+            this.colPhai.DataPropertyName = "Phai";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.colPhai.DefaultCellStyle = dataGridViewCellStyle4;
             this.colPhai.HeaderText = "Phái";
@@ -386,18 +393,21 @@ namespace OnTap_MainSub
             // 
             // cloNgaySinh
             // 
+            this.cloNgaySinh.DataPropertyName = "NgaySinh";
             this.cloNgaySinh.HeaderText = "Ngày sinh";
             this.cloNgaySinh.Name = "cloNgaySinh";
             this.cloNgaySinh.Width = 150;
             // 
             // colNoiSinh
             // 
+            this.colNoiSinh.DataPropertyName = "NoiSinh";
             this.colNoiSinh.HeaderText = "Nơi sinh";
             this.colNoiSinh.Name = "colNoiSinh";
             this.colNoiSinh.Width = 150;
             // 
             // colHocBong
             // 
+            this.colHocBong.DataPropertyName = "HocBong";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             this.colHocBong.DefaultCellStyle = dataGridViewCellStyle5;
             this.colHocBong.HeaderText = "Học bổng";
@@ -421,17 +431,18 @@ namespace OnTap_MainSub
             this.Controls.Add(this.lblSTT);
             this.Controls.Add(this.txtTSSV);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtTenKhoa);
+            this.Controls.Add(this.txtTenKH);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txtMaKhoa);
+            this.Controls.Add(this.txtMaKH);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ôn tập";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvKhoa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bdnKhoa)).EndInit();
             this.bdnKhoa.ResumeLayout(false);
@@ -444,9 +455,9 @@ namespace OnTap_MainSub
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMaKhoa;
+        private System.Windows.Forms.TextBox txtMaKH;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtTenKhoa;
+        private System.Windows.Forms.TextBox txtTenKH;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtTSSV;
         private System.Windows.Forms.Button btnSau;
